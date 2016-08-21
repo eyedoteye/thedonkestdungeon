@@ -1,12 +1,29 @@
 .App {
   text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.NavElement {
+  border-radius: 8px;
+  background-color: white;
+  margin-top: 5px;
+  font-weight: bolder;
+  color: #000000;
+  border-left: none;
+  border-right: none;
+}
+
+.Story {
 }
 
 .StoryBlock {
   border-width: medium;
   border-top: solid #dedede;
   border-bottom: solid #dedede;
-  padding: 10px 30px 10px 30px;
+  padding: 10px 30px 8px 30px;
   display: inline-block;
   margin: auto;
   border-radius: 20px;

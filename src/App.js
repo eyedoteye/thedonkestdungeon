@@ -20,8 +20,72 @@ var storyBlocks = [
     ],
     navElements: [
       { key: key++,
-        text: "Continue",
+        text: String.fromCharCode(parseInt(4036993683,16)),
 
+      },
+    ],
+  },
+  { key: key++,
+    textElements: [
+      { key: key++,
+        paragraphs: [
+          { key: key++,
+            text: "You have found yourself within," },
+          { key: key++,
+            text: "The Dankest Dungeon",
+            style: "bold",
+          },
+          { key: key++,
+            text: "" },
+        ],
+      },
+    ],
+    navElements: [
+      { key: key++,
+        text: "\u{25BC}",
+
+      },
+    ],
+  },
+  { key: key++,
+    textElements: [
+      { key: key++,
+        paragraphs: [
+          { key: key++,
+            text: "You have found yourself within," },
+          { key: key++,
+            text: "The Dankest Dungeon",
+            style: "bold",
+          },
+          { key: key++,
+            text: "" },
+        ],
+      },
+    ],
+    navElements: [
+      { key: key++,
+        text: "\u{25BC}",
+      },
+    ],
+  },
+  { key: key++,
+    textElements: [
+      { key: key++,
+        paragraphs: [
+          { key: key++,
+            text: "You have found yourself within," },
+          { key: key++,
+            text: "The Dankest Dungeon",
+            style: "bold",
+          },
+          { key: key++,
+            text: "" },
+        ],
+      },
+    ],
+    navElements: [
+      { key: key++,
+        text: "\u{25BC}",
       },
     ],
   },
@@ -35,7 +99,9 @@ class App extends Component { render() { return (
 
 class Story extends Component { render() {
   let storyBlocks = this.props.storyBlocks.map((storyBlock) => 
-    <StoryBlock {...storyBlock} />
+    <div>
+      <StoryBlock {...storyBlock} />
+    </div>
   );
   return (
     <div>
@@ -88,7 +154,7 @@ class Paragraph extends Component { render() {
 
 class NavElement extends Component {
   render() { return (
-    <button>{this.props.text}</button>
+    <button className="NavElement">{this.props.text}</button>
   );}
 }
 
