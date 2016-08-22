@@ -14,19 +14,23 @@
   color: #000000;
   border-left: none;
   border-right: none;
+  border-top: none;
+  margin: 0px 2px 0px 2px;
 }
 
 .Story {
+  display: inline-flex;
+  flex-direction: column;
 }
 
 .StoryBlock {
   border-width: medium;
   border-top: solid #dedede;
-  border-bottom: solid #dedede;
-  padding: 10px 30px 8px 30px;
-  display: inline-block;
-  margin: auto;
   border-radius: 20px;
+  padding: 10px 30px 8px 30px;
+  margin: auto;
+  display: inline-flex;
+  flex-direction: column;
 }
 
 .App-logo {
