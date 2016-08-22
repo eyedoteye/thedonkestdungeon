@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
+import { getStoryBlock } from './actions.js';
 
 class App extends Component { render() { return (
   <div className="App">
-    <Story currentStory={this.props.currentStory}/>
+    <Story
+      store={this.props.store}
+      currentStory={this.props.store.getState().storyBlocks}/>
   </div>
 );}}
-
 
 class Story extends Component {
   render() {
   let storyBlocks = this.props.currentStory.map((storyBlock) => 
-    <StoryBlock {...storyBlock} />
+    <StoryBlock store={this.props.store} {...storyBlock} />
   );
   return (
     <div className="Story">
@@ -22,7 +24,7 @@ class Story extends Component {
 
 class StoryBlock extends Component { render() {
   let navElements = this.props.navElements.map((navElement) => 
-    <NavElement {...navElement} />
+    <NavElement store={this.props.store} {...navElement} />
   );
   let style = {};
   if (this.props.width){
@@ -78,7 +80,17 @@ class TextElement extends Component { render() {
 
 class NavElement extends Component {
   render() { return (
-    <button className="NavElement">{this.props.text}</button>
+    <button
+      className="NavElement"
+      onClick={() => {
+        this.props.store.dispatch({
+          type: 'ADD_STORYBLOCK',
+          storyBlock: getStoryBlock(this.props.keyToStoryBlock),
+        });
+      }}
+    >
+      {this.props.text}
+    </button>
   );}
 }
 
