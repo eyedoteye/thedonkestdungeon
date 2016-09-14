@@ -139,7 +139,9 @@ export const getStoryBlock = (key) => {
 	if (storyBlock !== undefined) {
 		return {
 			...storyBlock,
-			key: sbkey++
+			id: sbkey++,
+      key: sbkey++,
+      disabled: false
 		};
 	}
 	throw new Error("Story Block with key: \""+key+"\" does not exist.");

@@ -12,6 +12,13 @@ var storyBlocks = (state = [], action) => { switch (action.type) {
       ...state,
       action.storyBlock,
     ];
+  case "TOGGLE_STORYBLOCK":
+  	return state.map(block => 
+  		block.id === action.id ? {
+  			...block,
+  			disabled: !block.disabled
+  		} : block
+  	);
   default:
     return state;
 }};

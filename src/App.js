@@ -13,7 +13,7 @@ class App extends Component { render() { return (
 class Story extends Component {
   render() {
   let storyBlocks = this.props.currentStory.map((storyBlock) => 
-    <StoryBlock store={this.props.store} {...storyBlock} />
+    <StoryBlock store={this.props.store} {...storyBlock}/>
   );
   return (
     <div className="Story">
@@ -24,7 +24,7 @@ class Story extends Component {
 
 class StoryBlock extends Component { render() {
   let navElements = this.props.navElements.map((navElement) => 
-    <NavElement store={this.props.store} {...navElement} />
+    <NavElement store={this.props.store} disabled={this.props.disabled} parentid={this.props.id} {...navElement} />
   );
   let style = {};
   if (this.props.width){
@@ -81,11 +81,17 @@ class TextElement extends Component { render() {
 class NavElement extends Component {
   render() { return (
     <button
+      ref="navElement"
       className="NavElement"
+      disabled={this.props.disabled}
       onClick={() => {
         this.props.store.dispatch({
           type: 'ADD_STORYBLOCK',
           storyBlock: getStoryBlock(this.props.keyToStoryBlock),
+        });
+        this.props.store.dispatch({
+          type: 'TOGGLE_STORYBLOCK',
+          id: this.props.parentid,
         });
       }}
     >
