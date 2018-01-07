@@ -74,63 +74,115 @@ var storyBlocksDB = [
     navElements: [
       { key: key++,
         text: "\u{25BC}",
-        keyToStoryBlock: "BeautifulRocket"
+        keyToStoryBlock: "Unphased",
       },
     ],
   },  
-  { key: "BeautifulRocket",
+  { key: "Unphased",
+    width: 530,
     textElements: [
       { key: key++,
-        text: "You have turned into a beautiful rocket ship.",
+        text: "Unphased by the occurence, you look ahead to a large chasm. The shoe is resting " +
+              "on the opposite end, next to the mossy stone slab it had flung into." +
+              "To your right there is a small cavern dug into the brick. From this angle " +
+              "it is hard to tell how deep the passageway goes. " +
+              "To your left there is an uninteresting wall.",
+      },
+    ],
+    navElements: [
+      { key: key++,
+        text: "Into The Small Cavern",
+      	keyToStoryBlock: "SmallCavern",
+      },
+      { key: key++,
+        text: "Jump The Chasm",
+        keyToStoryBlock: "Jump",
+      },
+      { key: key++,
+        text: "Look At Wall",
+        keyToStoryBlock: "LookAtWall",
+      }
+    ],
+  },
+  { key: "SmallCavern",
+    width: 120,
+    textElements: [
+      { key: key++,
+        text: "The Small Cavern",
+        style: "bold",
+        newline: true,
+      },
+      { key: key++,
+        text: "You're in a small cavern.",
+      }
+    ],
+    navElements: [
+      { key: key++,
+        text: "Climb Back Out",
+        keyToStoryBlock: "Unphased",
+      },
+    ],
+  },
+  { key: "Jump",
+    textElements: [
+      { key: key++,
+        text: "You jump.",
+      }
+    ],
+    navElements: [
+      { key: key++,
+        text: "\u{25BC}",
+        keyToStoryBlock: "OnSecondThought",
+      },
+    ],
+  },
+  {
+    key: "OnSecondThought",
+    width: 530,
+    textElements: [
+      { key: key++,
+        text: "On second thought, that chasm looks pretty dang deep. " +
+              "You decide to wait for further confidence to bestow strength upon your legs.",
       },
     ],
     navElements: [
       { key: key++,
         text: "\u{25BC}",
-      	keyToStoryBlock: "ShoeConcerns"
+        keyToStoryBlock: "ItNeverComes",
       },
     ],
   },
-  { key: "ShoeConcerns",
-    width: 620,
+  {
+    key: "ItNeverComes",
     textElements: [
       { key: key++,
-        text: "Author's Note:",
-        style: "bold"
-      },
-      { key: key++,
-        text: "My dear reader, I am concerned about your intentions." +
-              " I must ask you a question, and I urge you to please respond honestly." +
-              " There are.. there are certain things at stake here." +
-              " Certain.. important things.. and if I could further italicize important, trust me," +
-              " I would.",
-        style: "italic",
-        newline: true,
-      },
-      { key: key++,
-        text: "When you find that shoe, what will you do?",
-        style: "italic",
+        text: "It never comes",
       },
     ],
     navElements: [
       { key: key++,
-        text: "Eat The Shoe",
-        keyToStoryBlock: "ShoeConcerns"
-      },
-      { key: key++,
-        text: "Do Not Eat The Shoe",
-        keyToStoryBlock: "ShoeConcerns"
-      },
-      { key: key++,
-        text: "Punch The Shoe",
-        keyToStoryBlock: "ShoeConcerns"
-      },
-      { key: key++,
-        text: "There Is No Shoe",
-        keyToStoryBlock: "ShoeConcerns"
+        text: "\u{25BC}",
+        keyToStoryBlock: "Unphased",
       },
     ],
   },
+  { key: "LookAtWall",
+    textElements: [
+      { key: key++,
+        text: "You stare at the wall.",
+        newline: true,
+      },
+      { key: key++,
+        text: "It is uninteresting.",
+      }
+    ],
+    navElements: [
+      { key: key++,
+        text: "\u{25BC}",
+        keyToStoryBlock: "Unphased",
+      }
+    ]
+  }
 ]
 
 var sbkey = 0;
