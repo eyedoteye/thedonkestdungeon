@@ -8,7 +8,7 @@ var storyBlocksDB = [
         style: "italic",
       },
       { key: key++,
-        text: "The Dankest Dungeon",
+        text: "The Donkest Dungeon",
         style: "superbold",
         newline: true,
       },
@@ -25,7 +25,7 @@ var storyBlocksDB = [
     textElements: [
       { key: key++,
         text: "The floor is musty, the air is moist. Yup, this is definitely " +
-              "a dank dungeon. Hobling up from your decrepit position, you look up " +
+              "a donk dungeon. Hobling up from your decrepit position, you look up " +
               "at the unfortunate hole you must have fallen through. Your composure regained, " +
               "you point upwards with the muster of a thousand soaring eagles and beseech, ",
       },
